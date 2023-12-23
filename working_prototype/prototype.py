@@ -6,6 +6,8 @@ from PyQt6.QtCore import Qt
 from moviepy.editor import VideoFileClip
 from prototype_ui import Ui_MainWindow
 
+import qdarktheme
+
 
 class ConverterApp(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -68,6 +70,7 @@ class ConverterApp(QMainWindow, Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    qdarktheme.setup_theme()
     window = ConverterApp()
     window.show()
     sys.exit(app.exec())
