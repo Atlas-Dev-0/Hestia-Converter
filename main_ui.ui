@@ -246,7 +246,7 @@
     <property name="title">
      <string>Settings:</string>
     </property>
-    <widget class="QComboBox" name="comboBox_2">
+    <widget class="QComboBox" name="convert_To_comboBox">
      <property name="geometry">
       <rect>
        <x>20</x>
