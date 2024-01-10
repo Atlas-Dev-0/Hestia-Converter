@@ -4,22 +4,33 @@ import threading
 import qdarktheme
 from PIL import Image
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog
-from python_ui import Ui_MainWindow
+from python_ui import Ui_HestiaConverter
 from PyQt6.QtCore import Qt
 from moviepy.editor import VideoFileClip
 
 
-class hestiaMain(QMainWindow, Ui_MainWindow):
+class hestiaMain(QMainWindow, Ui_HestiaConverter):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
         self.filename = ""
         self.outputFolder = ""
+        self.import_box.setReadOnly(True)
+
+        # Disabled buttons initially
+        self.save_button.setEnabled(False)
+        self.convert_button.setEnabled(False)
 
         self.import_button.clicked.connect(self.browse_file)
         self.save_button.clicked.connect(self.saveTo_file)
         self.convert_button.clicked.connect(self.convert_file)
+
+    def log_import(self, message):
+        try:
+            self.import_box.setText(message)
+        except Exception as e:
+            print(f"Error logging message: {e}")
 
     def log_message(self, message):
         # Log the message using the log function
@@ -32,7 +43,7 @@ class hestiaMain(QMainWindow, Ui_MainWindow):
     def browse_file(self):
         try:
             self.file_name, _ = QFileDialog.getOpenFileName(
-                self, "Pick a File", "", "Mp4 (*.mp4);;Mp3 (*.mp3);;PNG (*.png);;JPG (*.jpg);;Webp (*.webp)", )
+                self, "Pick a File", "", "Mp4 (*.mp4);;Mp3 (*.mp3);;PNG (*.png);;JPG (*.jpg);;Webp (*.webp),")
 
             # Extract file extension
             self.original_extension = os.path.splitext(self.file_name)[1]
@@ -44,6 +55,8 @@ class hestiaMain(QMainWindow, Ui_MainWindow):
                     self.original_extension)
                 self.log_message(
                     f"File Picked: {self.file_name}, File Extension: {self.original_extension}")
+                self.log_import(f"{self.file_name}")
+                self.save_button.setEnabled(True)
         except Exception as e:
             self.log_message(f"Error browsing file: {e}")
 
@@ -53,6 +66,7 @@ class hestiaMain(QMainWindow, Ui_MainWindow):
                 self, "Select Folder to Save", "")
             if folder_path:
                 self.log_message("Save File To: " + folder_path)
+                self.convert_button.setEnabled(True)
             self.outputFolder = folder_path
         except Exception as e:
             self.log_message(f"Error saving file: {e}")

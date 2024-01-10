@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
  <author>Mr. G</author>
  <class>HestiaConverter</class>
  <widget class="QMainWindow" name="HestiaConverter">
@@ -278,6 +277,11 @@
      <item>
       <property name="text">
        <string>.webp</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>.avif</string>
       </property>
      </item>
     </widget>
