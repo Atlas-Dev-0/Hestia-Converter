@@ -1,2 +1,3 @@
-# Hestia Converter
- Snappy and Easy File Converter
+# HestiaConvert - File Converter
+
+Snappy and Easy File Converter
