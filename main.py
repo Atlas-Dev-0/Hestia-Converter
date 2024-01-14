@@ -43,7 +43,7 @@ class hestiaMain(QMainWindow, Ui_HestiaConverter):
     def browse_file(self):
         try:
             self.file_name, _ = QFileDialog.getOpenFileName(
-                self, "Pick a File", "", "Mp4 (*.mp4);;Mp3 (*.mp3);;PNG (*.png);;JPG (*.jpg);;Webp (*.webp),")
+                self, "Pick a File", "", "Mp4 (*.mp4);;Mp3 (*.mp3);;PNG (*.png);;JPG (*.jpg, *.jpeg);;Webp (*.webp),")
 
             # Extract file extension
             self.original_extension = os.path.splitext(self.file_name)[1]
@@ -99,11 +99,14 @@ class hestiaMain(QMainWindow, Ui_HestiaConverter):
             if convert_From == ".jpeg":
                 convert_From = ".jpg"
 
+            _, file_extension = os.path.splitext(input_file)
+
+            if file_extension == ".jpeg":
+                file_extension = ".jpg"
+
             self.log_message(f"Imported File: {input_file}")
             self.log_message(f"Imported File Extension: {convert_From}")
             self.log_message(f"Output File Extension: {convert_To}")
-
-            _, file_extension = os.path.splitext(input_file)
 
             if file_extension.lower() == convert_From.lower():
                 if file_extension.lower() in [".jpg", ".png", ".webp"]:
