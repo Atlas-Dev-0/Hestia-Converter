@@ -14,24 +14,29 @@ class Ui_HestiaConverter(object):
         HestiaConverter.setObjectName("HestiaConverter")
         HestiaConverter.setEnabled(True)
         HestiaConverter.resize(203, 617)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(HestiaConverter.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            HestiaConverter.sizePolicy().hasHeightForWidth())
         HestiaConverter.setSizePolicy(sizePolicy)
         HestiaConverter.setMinimumSize(QtCore.QSize(203, 617))
         HestiaConverter.setMaximumSize(QtCore.QSize(203, 617))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\hestia_convert_logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\hestia_convert_logo.ico"),
+                       QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         HestiaConverter.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(parent=HestiaConverter)
         self.centralwidget.setObjectName("centralwidget")
         self.convert_button = QtWidgets.QPushButton(parent=self.centralwidget)
         self.convert_button.setGeometry(QtCore.QRect(10, 260, 181, 41))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.convert_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.convert_button.sizePolicy().hasHeightForWidth())
         self.convert_button.setSizePolicy(sizePolicy)
         self.convert_button.setObjectName("convert_button")
         self.import_button = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -70,7 +75,8 @@ class Ui_HestiaConverter(object):
         self.Settings_Group = QtWidgets.QGroupBox(parent=self.centralwidget)
         self.Settings_Group.setGeometry(QtCore.QRect(10, 110, 181, 141))
         self.Settings_Group.setObjectName("Settings_Group")
-        self.convert_To_comboBox = QtWidgets.QComboBox(parent=self.Settings_Group)
+        self.convert_To_comboBox = QtWidgets.QComboBox(
+            parent=self.Settings_Group)
         self.convert_To_comboBox.setGeometry(QtCore.QRect(20, 110, 151, 22))
         self.convert_To_comboBox.setObjectName("convert_To_comboBox")
         self.convert_To_comboBox.addItem("")
@@ -92,7 +98,8 @@ class Ui_HestiaConverter(object):
         font.setPointSize(10)
         self.Convert_to.setFont(font)
         self.Convert_to.setObjectName("Convert_to")
-        self.convert_from_comboBox = QtWidgets.QComboBox(parent=self.Settings_Group)
+        self.convert_from_comboBox = QtWidgets.QComboBox(
+            parent=self.Settings_Group)
         self.convert_from_comboBox.setGeometry(QtCore.QRect(20, 50, 151, 22))
         self.convert_from_comboBox.setObjectName("convert_from_comboBox")
         self.convert_from_comboBox.addItem("")
@@ -129,26 +136,41 @@ class Ui_HestiaConverter(object):
 
     def retranslateUi(self, HestiaConverter):
         _translate = QtCore.QCoreApplication.translate
-        HestiaConverter.setWindowTitle(_translate("HestiaConverter", "HestiaConverter"))
+        HestiaConverter.setWindowTitle(_translate(
+            "HestiaConverter", "HestiaConverter"))
         self.convert_button.setText(_translate("HestiaConverter", "CONVERT"))
-        self.import_button.setText(_translate("HestiaConverter", "IMPORT FILE"))
+        self.import_button.setText(_translate(
+            "HestiaConverter", "IMPORT FILE"))
         self.save_button.setText(_translate("HestiaConverter", "SAVE TO"))
         self.groupBox.setTitle(_translate("HestiaConverter", "Information:"))
-        self.label_2.setText(_translate("HestiaConverter", "Kenneth Gonzales (Mr.G)"))
+        self.label_2.setText(_translate(
+            "HestiaConverter", "Kenneth Gonzales (Mr.G)"))
         self.label.setText(_translate("HestiaConverter", "HESTIA CONVERTER"))
-        self.Settings_Group.setTitle(_translate("HestiaConverter", "Settings:"))
-        self.convert_To_comboBox.setItemText(0, _translate("HestiaConverter", "IMAGES"))
-        self.convert_To_comboBox.setItemText(1, _translate("HestiaConverter", ".png"))
-        self.convert_To_comboBox.setItemText(2, _translate("HestiaConverter", ".jpeg"))
-        self.convert_To_comboBox.setItemText(3, _translate("HestiaConverter", "AUDIO"))
-        self.convert_To_comboBox.setItemText(4, _translate("HestiaConverter", ".mp3"))
-        self.Convert_from.setText(_translate("HestiaConverter", "Convert From..."))
+        self.Settings_Group.setTitle(
+            _translate("HestiaConverter", "Settings:"))
+        self.convert_To_comboBox.setItemText(
+            0, _translate("HestiaConverter", "IMAGES"))
+        self.convert_To_comboBox.setItemText(
+            1, _translate("HestiaConverter", ".png"))
+        self.convert_To_comboBox.setItemText(
+            2, _translate("HestiaConverter", ".jpeg"))
+        self.convert_To_comboBox.setItemText(
+            3, _translate("HestiaConverter", "AUDIO"))
+        self.convert_To_comboBox.setItemText(
+            4, _translate("HestiaConverter", ".mp3"))
+        self.Convert_from.setText(_translate(
+            "HestiaConverter", "Convert From..."))
         self.Convert_to.setText(_translate("HestiaConverter", "Convert To..."))
-        self.convert_from_comboBox.setItemText(1, _translate("HestiaConverter", ".mp4"))
-        self.convert_from_comboBox.setItemText(2, _translate("HestiaConverter", "IMAGES"))
-        self.convert_from_comboBox.setItemText(3, _translate("HestiaConverter", ".png"))
-        self.convert_from_comboBox.setItemText(4, _translate("HestiaConverter", ".jpeg"))
-        self.convert_from_comboBox.setItemText(5, _translate("HestiaConverter", ".webp"))
+        self.convert_from_comboBox.setItemText(
+            1, _translate("HestiaConverter", ".mp4"))
+        self.convert_from_comboBox.setItemText(
+            2, _translate("HestiaConverter", "IMAGES"))
+        self.convert_from_comboBox.setItemText(
+            3, _translate("HestiaConverter", ".png"))
+        self.convert_from_comboBox.setItemText(
+            4, _translate("HestiaConverter", ".jpeg"))
+        self.convert_from_comboBox.setItemText(
+            5, _translate("HestiaConverter", ".webp"))
         self.groupBox_3.setTitle(_translate("HestiaConverter", "Logs:"))
 
 
