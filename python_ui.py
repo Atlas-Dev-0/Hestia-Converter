@@ -24,7 +24,7 @@ class Ui_HestiaConverter(object):
         HestiaConverter.setMinimumSize(QtCore.QSize(203, 617))
         HestiaConverter.setMaximumSize(QtCore.QSize(203, 617))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(".\\hestia_convert_logo.ico"),
+        icon.addPixmap(QtGui.QPixmap("hestia_convert_logo.ico"),
                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         HestiaConverter.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(parent=HestiaConverter)

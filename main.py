@@ -3,6 +3,7 @@ import os
 import threading
 import qdarktheme
 from PIL import Image
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog
 from python_ui import Ui_HestiaConverter
 from PyQt6.QtCore import Qt
@@ -13,7 +14,7 @@ class hestiaMain(QMainWindow, Ui_HestiaConverter):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+        self.setWindowIcon(QIcon("hestia_convert_logo.ico"))
         self.filename = ""
         self.outputFolder = ""
         self.import_box.setReadOnly(True)
